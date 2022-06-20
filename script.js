@@ -15,10 +15,10 @@ let operate = (operator, a, b) => {
     else if(operator =='-'){
         return sub(a, b)
     }
-    else if(operator == '/'){
+    else if(operator == '*'){
         return times(a, b)
     }
-    else if(operator == '*'){
+    else if(operator == '/'){
         return divide(a, b)
     }else return "wrong";
 };
@@ -37,6 +37,33 @@ let buttonMaker = (num) =>{
 for(let i = 0; i < 10; i++){
     buttonMaker(i);
 };
+
+let sign;
+let oldValue;
+const buttonPlus = document.querySelector(`.buttonPlus`);
+buttonPlus.addEventListener('click', () => {
+oldValue = displayValue
+sign = '+'
+display.textContent = ''
+});
+const buttonSub = document.querySelector(`.buttonSub`);
+buttonSub.addEventListener('click', () => {
+oldValue = displayValue
+sign = '-'
+display.textContent = ''
+});
+const buttonTimes = document.querySelector(`.buttonTimes`);
+buttonTimes.addEventListener('click', () => {
+oldValue = displayValue
+sign = '*'
+display.textContent = ''
+});
+const buttonDivide = document.querySelector(`.buttonDivide`);
+buttonDivide.addEventListener('click', () => {
+oldValue = displayValue
+sign = '/'
+display.textContent = ''
+});
 
 const buttonEquals = document.querySelector(`.buttonEquals`);
 buttonEquals.addEventListener('click', () => {
