@@ -6,6 +6,12 @@ let times = (a, b) => a * b;
 
 let divide = (a, b) => a / b;
 
+// 6 think
+// 7 parsefloat? addeventlistener
+// css
+//9 remove using slice(-1)
+//10 numbers done
+
 let operate = (operator, a, b) => {
     a = parseInt(a)
     b = parseInt(b)
@@ -19,13 +25,17 @@ let operate = (operator, a, b) => {
         return times(a, b)
     }
     else if(operator == '/'){
+        if(b == 0) return "NOPE!";
         return divide(a, b)
     }else return "wrong";
 };
 const display = document.querySelector('.display');
 const clear = document.querySelector('.clear');
+const body = document.querySelector('body')
 clear.addEventListener('click', () => {
-display.textContent = ''
+display.textContent = '';
+oldValue = 0;
+displayValue = 0;
 });
 let displayValue ='';
 let buttonMaker = (num) =>{
@@ -37,35 +47,66 @@ let buttonMaker = (num) =>{
 for(let i = 0; i < 10; i++){
     buttonMaker(i);
 };
+let operatorAlready = () =>{
+    if(sign == '+'){
+        displayValue = operate(sign, oldValue, displayValue);
+        display.textContent = displayValue
+    }
+    else if(sign == '-'){
+       return displayValue = display.textContent = operate(sign, oldValue, displayValue);
+    }
+    else if(sign == '*'){
+       return displayValue = display.textContent = operate(sign, oldValue, displayValue);
+    }
+    else if(sign == '/'){
+       return displayValue = display.textContent = operate(sign, oldValue, displayValue);
+    }
 
+}
 let sign;
 let oldValue;
 const buttonPlus = document.querySelector(`.buttonPlus`);
 buttonPlus.addEventListener('click', () => {
-oldValue = displayValue
-sign = '+'
-display.textContent = ''
+operatorAlready();
+oldValue = displayValue;
+sign = '+';
+display.textContent = '';
 });
 const buttonSub = document.querySelector(`.buttonSub`);
 buttonSub.addEventListener('click', () => {
-oldValue = displayValue
-sign = '-'
-display.textContent = ''
+operatorAlready();
+oldValue = displayValue;
+sign = '-';
+display.textContent = '';
 });
 const buttonTimes = document.querySelector(`.buttonTimes`);
 buttonTimes.addEventListener('click', () => {
-oldValue = displayValue
-sign = '*'
-display.textContent = ''
+operatorAlready();
+oldValue = displayValue;
+sign = '*';
+display.textContent = '';
 });
 const buttonDivide = document.querySelector(`.buttonDivide`);
 buttonDivide.addEventListener('click', () => {
-oldValue = displayValue
-sign = '/'
-display.textContent = ''
+operatorAlready();
+oldValue = displayValue;
+sign = '/';
+display.textContent = '';
 });
 
 const buttonEquals = document.querySelector(`.buttonEquals`);
 buttonEquals.addEventListener('click', () => {
 displayValue = display.textContent = operate(sign, oldValue, displayValue);
 });
+
+let buttonClicker = (num) =>{
+body.addEventListener('keyup', e =>{
+const button = document.querySelector(`.button${num}`);
+if(e.key == `${num}`){
+button.click();
+};
+});
+};
+for(let i = 0; i < 10; i++){
+    buttonClicker(i);
+};
