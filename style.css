@@ -1,19 +1,20 @@
 .display{
-    width: 295px;
-    height: 45px;
+    width: 310px;
+    height: 60px;
     border: black solid 2px;
     font-size: 50px;
     text-align: end;
-    padding: 0px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
     border-radius: 5px;
     background-color: aliceblue;
 }
 button{
     font-size: 40px;
-    border-radius: 4px;
+    border-radius: 8px;
     height: 60px;
     width: 80px;
-    background-color: rgb(184, 179, 179);
+    background-color: rgb(239, 140, 0);
+    margin: 2px;
 }
 body{
     display: flex;
@@ -27,11 +28,15 @@ body{
 .clear{
     font-size:30px;
 }
-.del{
+.bot{
     font-size: 35px;
-    width: 320px;
+    width: 248px;
 }
 .back{
     background-color: black;
     padding: 3px;
+    border-radius: 8px;
+}
+.num{
+    background-color: rgb(26, 204, 6);
 }

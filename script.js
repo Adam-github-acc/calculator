@@ -32,6 +32,7 @@ let operate = (operator, a, b) => {
 const display = document.querySelector('.display');
 const clear = document.querySelector('.clear');
 const body = document.querySelector('body')
+const del = document.querySelector('.del');
 clear.addEventListener('click', () => {
 display.textContent = '';
 oldValue = 0;
@@ -110,9 +111,13 @@ button.click();
 for(let i = 0; i < 10; i++){
     buttonClicker(i);
 };
-const del = document.querySelector('.del');
+body.addEventListener('keyup', e =>{
+if(e.key == 'Backspace'){
+del.click();
+};
+});
 del.addEventListener('click', () => {
-return display.textContent = display.textContent.slice(0, -1);
+return displayValue = display.textContent = display.textContent.slice(0, -1);
 });
 const change = document.querySelector('.change')
 change.addEventListener('click', () => {
