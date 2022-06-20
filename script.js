@@ -110,3 +110,7 @@ button.click();
 for(let i = 0; i < 10; i++){
     buttonClicker(i);
 };
+const del = document.querySelector('.del');
+del.addEventListener('click', () => {
+return display.textContent = display.textContent.slice(0, -1);
+});
