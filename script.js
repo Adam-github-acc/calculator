@@ -67,5 +67,5 @@ display.textContent = ''
 
 const buttonEquals = document.querySelector(`.buttonEquals`);
 buttonEquals.addEventListener('click', () => {
-display.textContent = operate(sign, oldValue, displayValue);
+displayValue = display.textContent = operate(sign, oldValue, displayValue);
 });
