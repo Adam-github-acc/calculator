@@ -114,3 +114,7 @@ const del = document.querySelector('.del');
 del.addEventListener('click', () => {
 return display.textContent = display.textContent.slice(0, -1);
 });
+const change = document.querySelector('.change')
+change.addEventListener('click', () => {
+displayValue = display.textContent = parseInt((display.textContent) * -1)
+});
