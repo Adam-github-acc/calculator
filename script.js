@@ -96,7 +96,7 @@ display.textContent = '';
 
 const buttonEquals = document.querySelector(`.buttonEquals`);
 buttonEquals.addEventListener('click', () => {
-displayValue = display.textContent = operate(sign, oldValue, displayValue);
+display.textContent = operate(sign, oldValue, displayValue);
 });
 
 let buttonClicker = (num) =>{

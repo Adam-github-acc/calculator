@@ -6,7 +6,7 @@
     text-align: end;
     padding: 0px 10px 10px 10px;
     border-radius: 5px;
-
+    background-color: aliceblue;
 }
 button{
     font-size: 40px;
@@ -26,4 +26,12 @@ body{
 }
 .clear{
     font-size:30px;
+}
+.del{
+    font-size: 35px;
+    width: 320px;
+}
+.back{
+    background-color: black;
+    padding: 3px;
 }
